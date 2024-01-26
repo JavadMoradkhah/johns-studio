@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title  -->
+    <title>{% block page_title %}{% endblock %}</title>
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'core/img/core-img/favicon.ico' %}"/>
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/core-style.css' %}"/>
+    <!-- Responsive CSS -->
+    <link href="{% static 'core/css/responsive.css' %}" rel="stylesheet"/>
+</head>
+
+<body>
+<!-- Preloader -->
+{% include 'core/inc/preloader.html' %}
+
+<!-- Gradient Background Overlay -->
+<div class="gradient-background-overlay"></div>
+
+<!-- Header Area Start -->
+{% include 'core/inc/header.html' %}
+<!-- Header Area End -->
+
+<!-- Social Sidebar Area Start -->
+{% include 'core/inc/sidebar.html' %}
+<!-- Social Sidebar Area End -->
+
+{% block content %}{% endblock %}
+
+<!-- Footer Area Start -->
+{% include 'core/inc/footer.html' %}
+<!-- Footer Area End -->
+
+<!-- jQuery -->
+<script src="{% static 'core/js/jquery/jquery-2.2.4.min.js' %}"></script>
+<!-- Popper js -->
+<script src="{% static 'core/js/popper.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+<!-- Plugins js -->
+<script src="{% static 'core/js/plugins.js' %}"></script>
+<!-- Active js -->
+<script src="{% static 'core/js/active.js' %}"></script>
+</body>
+</html>

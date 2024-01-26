@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block page_title %}
+    John's Studio - Creative Photography | Portfolio
+{% endblock %}
+
+{% block content %}
+    <!-- Project Area Start -->
+    <div class="gallery_area clearfix">
+        <div class="container-fluid clearfix">
+            <div class="gallery_menu">
+                <div class="portfolio-menu">
+                    <a class="btn {% if active_category == 'all' %}active{% endif %}"
+                       href="{% url 'portfolio' %}">All</a>
+
+                    {% for category in categories %}
+                        <a class="btn {% if active_category == category.slug %}active{% endif %}"
+                           href="{% url 'portfolio' category.slug %}">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="row portfolio-column">
+                {% for portfolio_item in portfolio %}
+                    <!-- Single Item -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 column_single_gallery_item portraits life">
+                        <img src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.caption }}"/>
+
+                        <div class="hover_overlay">
+                            <a class="gallery_img" href="{{ portfolio_item.image.url }}">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center mt-70">
+                    <a href="#" class="btn studio-btn"
+                    ><img src="img/core-img/logo-icon.png" alt=""/> Load More</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project Area End -->
+{% endblock %}
