@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # My Apps
+    'core',
     # Installed Apps
     'debug_toolbar',
     'django_cleanup.apps.CleanupConfig',
